@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.py[oc]
+.venv/
+
+# Node
+node_modules/
+dist/
+
+# 生成物・ログ
+*.log
+*.wav
+.env*
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/*
+!.vscode/extensions.json

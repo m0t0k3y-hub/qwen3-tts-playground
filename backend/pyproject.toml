@@ -1,0 +1,23 @@
+[project]
+name = "qwen3-tts-spike"
+version = "0.1.0"
+description = "Add your description here"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.162.0",
+    "qwen-tts>=0.1.1",
+    "uvicorn>=0.54.0",
+]
+
+[project.scripts]
+qwen3-tts-spike = "qwen3_tts_spike:main"
+
+[build-system]
+requires = ["uv_build>=0.13.5,<0.14.0"]
+build-backend = "uv_build"
+
+[tool.uv]
+# WSL上のシステムPythonには Python.h が無く Triton のJITが失敗するため、uv管理のPythonを使う
+python-preference = "only-managed"
+# プロジェクトがNTFS(/mnt/c)上にありキャッシュと別FSなので hardlink ではなく copy
+link-mode = "copy"
